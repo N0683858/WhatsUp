@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "247375124895",
+    "project_id": "whatsup-12457",
+    "storage_bucket": "whatsup-12457.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247375124895:android:b5195320816856565105aa",
+        "android_client_info": {
+          "package_name": "com.hamidraza.whatsup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247375124895-j4sdn40koquoth872gqkk6k6hbbfhc11.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0GuWLOOTH0VnxPDLxPE2DgCu3c_-eD7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247375124895-j4sdn40koquoth872gqkk6k6hbbfhc11.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
