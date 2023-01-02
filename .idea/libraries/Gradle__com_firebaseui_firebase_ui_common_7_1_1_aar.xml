@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.firebaseui:firebase-ui-common:7.1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bec0b2d94b0e3b2ceccf143a8c871ce8/jetified-firebase-ui-common-7.1.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bec0b2d94b0e3b2ceccf143a8c871ce8/jetified-firebase-ui-common-7.1.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bec0b2d94b0e3b2ceccf143a8c871ce8/jetified-firebase-ui-common-7.1.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/075b02ae1c13806b4b27058b77331654/jetified-firebase-ui-common-7.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/075b02ae1c13806b4b27058b77331654/jetified-firebase-ui-common-7.1.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/075b02ae1c13806b4b27058b77331654/jetified-firebase-ui-common-7.1.1/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.firebaseui/firebase-ui-common/7.1.1/4132be2f4ab8683be4c51da3f0e701e2921de6e4/firebase-ui-common-7.1.1-javadoc.jar!/" />

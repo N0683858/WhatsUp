@@ -28,7 +28,9 @@
         android:id="@+id/main_tabs_pager"
         android:layout_width="match_parent"
         android:layout_height="660dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="125dp"
         android:layout_marginBottom="0dp">
 
     </androidx.viewpager.widget.ViewPager>

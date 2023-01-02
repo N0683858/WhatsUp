@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                     {
                         mloginProgressDialog.hide();
                         emailTextField.setError("Username or Password incorrect!");
-                        Toast.makeText(LoginActivity.this, "Cannot sign in. Please try again.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Cannot sign in. Please try again. ", Toast.LENGTH_SHORT).show();
 
                         //== GET EXCEPTION ==//
                         // Will tell why is was not successful

@@ -20,6 +20,11 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -36,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     // =========== FIREBASE =============== //
     private FirebaseAuth mAuth;
+    private DatabaseReference mFirebaseDatabaseRef;
 
     // =========== PROGRESS DIALOG =============== //
     private ProgressDialog mRegProgressDialog;
@@ -175,12 +181,33 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    mRegProgressDialog.dismiss();
-                    Toast.makeText(RegisterActivity.this, "New User Created!", Toast.LENGTH_SHORT).show();
-                    Intent main_intent = new Intent(getApplicationContext(), MainActivity.class);
-                    main_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(main_intent);
-                    finish();
+                    // ADDING USER DATA TO FIREBASE //
+                    String userDisplayName = displayNameTextField.getEditText().getText().toString(); // converting the display name to string
+                    FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+                    String userID = current_user.getUid();
+                    mFirebaseDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child(userID);
+
+                    // USING HASH VALUE (KEY + PAIR) TO ADD VALUES TO THE DATABASE //
+                    HashMap<String, String> userHashMap = new HashMap<>();
+                    userHashMap.put("name", userDisplayName);
+                    userHashMap.put("status", "Hi there, I'm using WhatsUp!");
+                    userHashMap.put("image", "default");
+                    userHashMap.put("thumbnail_img", "default");
+
+                    // ADDING VALUES TO THE DATABASE //
+                    mFirebaseDatabaseRef.setValue(userHashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            // STARTING INTENT TO MOVE TO THE NEXT SCREEN //
+                            mRegProgressDialog.dismiss();
+                            Toast.makeText(RegisterActivity.this, "New User Created!", Toast.LENGTH_SHORT).show();
+                            Intent main_intent = new Intent(getApplicationContext(), MainActivity.class);
+                            main_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(main_intent);
+                            finish();
+                        }
+                    });
                 }
             }
         });

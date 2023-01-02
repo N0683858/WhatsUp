@@ -4,15 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange"
+    android:background="@drawable/start_screen"
     tools:context=".SettingsActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="219dp"
-        android:layout_height="398dp"
+        android:id="@+id/settings_profile_img"
+        android:layout_width="274dp"
+        android:layout_height="305dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/profile_pic_example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/settings_img_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="30dp"
+        android:fontFamily="@font/roboto_black"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="12dp"
+        android:text="Change Image"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/settings_status_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/settings_status_btn"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_black"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="12dp"
+        android:text="Change Status"
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_profile_img">
+
+        <TextView
+            android:id="@+id/settings_display_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Display Name"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/settings_status_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/text_bubble"
+            android:fontFamily="@font/roboto_regular"
+            android:paddingStart="40dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="30dp"
+            android:paddingEnd="20dp"
+            android:text="Hi there, Im using WhatsUp Chat App."
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
